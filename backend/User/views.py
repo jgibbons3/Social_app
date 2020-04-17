@@ -7,6 +7,9 @@ from rest_framework.response import Response
 from Post.permissions import IsOwnerOfPostOrReadOnly
 from User.serializers import UserSerializer, FriendshipSerializer
 from .models import User, Friendship
+from rest_framework.parsers import JSONParser, FormParser, MultiPartParser
+from rest_framework.decorators import parser_classes
+from rest_framework import viewsets
 
 
 # 1)api/social/followers/toggle-follow/<int:user_id>/ POST: Toggle follow/unfollow a user
@@ -56,9 +59,8 @@ class CreateFriendRequest(CreateAPIView):
         return Response('friend request sent')
 
 
-# 5)api/social/friends/requests/<int:friend_request_id>/ GET: Get details of a friend request
-# 6)api/social/friends/requests/<int:friend_request_id>/ PATCH: Accept or Reject an open friend request
-# 7)api/social/friends/requests/<int:friend_request_id>/ DELETE: Delete a friend request
+# 5)api/social/friends/requests/<int:friend_request_id>/ PATCH: Accept or Reject an open friend request
+# 6)api/social/friends/requests/<int:friend_request_id>/ DELETE: Delete a friend request
 class RetrieveUpdateDeleteFriendship(RetrieveUpdateDestroyAPIView):
     queryset = Friendship.objects.all()
     serializer_class = FriendshipSerializer
@@ -66,7 +68,7 @@ class RetrieveUpdateDeleteFriendship(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated, IsOwnerOfPostOrReadOnly]
 
 
-# 8)api/social/friends/ GET: List all accepted friends
+# 7)api/social/friends/ GET: List all accepted friends
 class AllPostPerUser(generics.ListAPIView):
     serializer_class = FriendshipSerializer
     permission_classes = [IsAuthenticated, IsOwnerOfPostOrReadOnly]
@@ -78,6 +80,15 @@ class AllPostPerUser(generics.ListAPIView):
 
         # return Friendship.objects.filter(requester_user_id=self.request.user, friendship_status='accept')
 
+# 8)api/social/friends_requests/ GET: List all pending friend requests 
+class AllPendingFriendRequests(generics.ListAPIView):
+    serializer_class = FriendshipSerializer
+    permission_classes = [IsAuthenticated, IsOwnerOfPostOrReadOnly]
+
+    def get_queryset(self):
+        return Friendship.objects.filter(
+            Q(requester_user_id=self.request.user) & Q(friendship_status='pending') |
+            Q(receiver_user_id=self.request.user) & Q(friendship_status='pending'))
 
 # 9)api/users/ GET: Get all the users
 # 10)api/users/?search=<str:search_string> GET: Search users
@@ -96,17 +107,24 @@ class ListUser(RetrieveUpdateDestroyAPIView):
 
 
 # ME
-# 1)api/users/me/ GET: Get logged in user’s profile (as well as private information like email, etc.)
-# 2)api/users/me/ POST: Update the logged in user’s profile public info)
-class MyProfile(generics.ListAPIView):
+# 1)api/users/me/ GET: Get logged in user’s profile
+# 2)api/users/me/ POST: Update the logged in user’s profile public info
+@parser_classes([JSONParser, FormParser, MultiPartParser])
+class MyProfile(viewsets.ViewSet):
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOfPostOrReadOnly]
 
     def get_queryset(self):
         return User.objects.filter(username=self.request.user)
 
-    def post(self, request):
-        user = User.objects.filter(username=self.request.user)
-        user.update(**request.data)
-        return Response('updated')
+    def update(self, request, pk=None):
+        user = User.objects.get(username=self.request.user)
+        for key in request.data.keys():
+            setattr(user, key, request.data[key])
+        user.save()
+        return Response(UserSerializer(user).data)
+
+    def retrieve(self, request):
+        return Response(UserSerializer(request.user).data)
+      
 

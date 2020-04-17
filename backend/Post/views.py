@@ -4,7 +4,7 @@ from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView,
     RetrieveUpdateAPIView, DestroyAPIView, RetrieveUpdateDestroyAPIView, GenericAPIView, get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from Post.serializers import PostSerializer, CommentSerializer
+from Post.serializers import PostSerializer, CommentSerializer, PostCreateSerializer, CommentUserSerializer
 from Post.permissions import IsOwnerOfPostOrReadOnly
 from User.serializers import UserSerializer, FriendshipSerializer
 from .models import Post, Comment
@@ -12,6 +12,14 @@ from User.models import User, Friendship
 
 
 # 1)api/social/posts/ POST: user can create a new post by sending post data. He should also be able to share another post.
+class CreatePost(ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostCreateSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
 # 2)api/social/posts/ GET: lists all the posts of all users in chronological order
 # 3)api/social/posts/?search=<str:search_string> GET: Search posts of all users and list result in chronological order
 class ListCreatePost(ListCreateAPIView):
@@ -19,9 +27,6 @@ class ListCreatePost(ListCreateAPIView):
     serializer_class = PostSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['title', 'content']
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
 
 
 # 4)api/social/posts/<int:post_id>/ GET: get a specific post by ID and display all the information about that post
@@ -98,15 +103,20 @@ class likedBy_User(generics.ListAPIView):
 
 # COMMENTS
 # 1)api/social/comments/<int:post_id>/ POST: Create a new comment on a post.
-# 2)api/social/comments/<int:post_id>/ GET: List all comments of a post
+
 class comments_postId(ListCreateAPIView):
     serializer_class = CommentSerializer
     lookup_url_kwarg = "post_id"
 
-    def get_queryset(self):
-        post_id = self.kwargs['post_id']
-        return Comment.objects.filter(comment_post=post_id)
-
     def perform_create(self, serializer):
         post_id = self.kwargs['post_id']
         serializer.save(comment_owner=self.request.user, comment_post_id=post_id) # comment_post_id to get the post_id directly
+
+# 2)api/social/comments/<int:post_id>/ GET: List all comments of a post
+class comments_post(ListCreateAPIView):
+    serializer_class = CommentUserSerializer
+    lookup_url_kwarg = "post_id"
+
+    def get_queryset(self):
+        post_id = self.kwargs['post_id']
+        return Comment.objects.filter(comment_post=post_id)     

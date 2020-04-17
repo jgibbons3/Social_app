@@ -119,6 +119,10 @@ REST_FRAMEWORK = {
     ]
 }
 
+# FILE_UPLOAD_HANDLERS = [
+#     'django.core.files.uploadhandler.MemoryFileUploadHandler',
+#     'django.core.files.uploadedfile.TemporaryUploadedFile',
+# ]
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),

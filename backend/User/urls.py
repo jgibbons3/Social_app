@@ -10,6 +10,7 @@ urlpatterns = [
     path('social/followers/toggle-follow/<int:user_id>/', ToggleFollow.as_view()),
     path('social/friends/requests/<int:friend_request_id>/', RetrieveUpdateDeleteFriendship.as_view()),
     path('social/friends/', AllPostPerUser.as_view()),
-    path('users/me/', MyProfile.as_view()),
+    path('users/me/', MyProfile.as_view({'get': 'retrieve', 'patch': 'update'})),
     path('social/friends/request/<int:user_id>/', CreateFriendRequest.as_view()),
+    path('social/friend_requests/', AllPendingFriendRequests.as_view()),
 ]

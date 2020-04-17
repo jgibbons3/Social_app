@@ -12,8 +12,23 @@ class User(AbstractUser):
 
     username = models.CharField(
         verbose_name='username',
-        max_length=200,
+        max_length=50,
         unique=True)
+
+    city = models.CharField(
+        verbose_name='city',
+        max_length=50,
+        blank=True)
+
+    country = models.CharField(
+        verbose_name='country',
+        max_length=50,
+        blank=True)
+
+    about = models.CharField(
+        verbose_name='about',
+        max_length=300,
+        blank=True)
 
     like_post = models.ManyToManyField(
          verbose_name='liked_posts',

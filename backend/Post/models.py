@@ -20,8 +20,13 @@ class Post(models.Model):
     date = models.DateField(
         auto_now_add=True)
 
+    image = models.ImageField(
+        verbose_name='user image',
+        blank=True,
+        null=True)
+
     def __str__(self):
-        return f' {self.owner} / {self.title} / {self.content}'
+        return f' {self.owner} / {self.title} / {self.content} / {self.image}'
 
 
 
@@ -36,6 +41,9 @@ class Comment(models.Model):
         verbose_name='comment',
         blank=True
     )
+
+    date = models.DateField(
+        auto_now_add=True)
 
     comment_post = models.ForeignKey(
         to=Post,

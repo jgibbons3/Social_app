@@ -8,7 +8,8 @@ User = get_user_model()
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'followers', 'image', 'like_post']
+        fields = ['id', 'username', 'email', 'followers', 'image', 'like_post', 'first_name', 'last_name', 'city', 'country', 'about']
+        # fields = '__all__'
 
 
 class FriendshipSerializer(serializers.ModelSerializer):
