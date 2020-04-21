@@ -26,11 +26,12 @@ const LandingPage = props => {
         setNotif(!notif)
     }
      
+    const { dispatch, userProfile } = props;
     useEffect(() => {
-        if(props.userProfile instanceof Array === false) {
-            props.dispatch(pendingFriendRequestAction(props.userProfile))
+        if(userProfile instanceof Array === false) {
+            dispatch(pendingFriendRequestAction(userProfile))
         }
-    }, [props.userProfile]);
+    }, [userProfile, dispatch]);
    
 
     return(

@@ -60,7 +60,7 @@ export const followUserAction = (user) => async (dispatch, getState) => {
     };
 
     const response = await fetch(`http://localhost:8000/api/social/followers/toggle-follow/${user.id}/`, config);
-    const data = await response.json();
+        await response.json();
 
     const action = {
         type: "FOLLOW_USER",
@@ -108,15 +108,7 @@ export const addFriendAction = (user) => async (dispatch, getState) => {
     };
 
     const response = await fetch(`http://localhost:8000/api/social/friends/request/${user.id}/`, config);
-    const data = await response.json();
-    // console.log("data del friend request", data) data = "friend request sent"
-
-    // const action = {
-    //     type: "FRIENDS_REQUEST",
-    //     payload: user
-    // };
-    // no necesito el action, solo si es que preciso mostrar alguna notification de pending friend request.
-    // dispatch(action)
+        await response.json();
 };
 
 
@@ -134,7 +126,7 @@ export const updateProfileAction = (updateData) => async (dispatch, getState) =>
     };
 
     const response = await fetch(`http://localhost:8000/api/users/me/`, config);
-    const data = await response.json();
+        await response.json();
 
     const action = {
         type: "UPDATE_PROFILE",

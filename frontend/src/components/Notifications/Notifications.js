@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import "./Notifications.css";
 import { FiClock } from "react-icons/fi";
@@ -24,7 +24,7 @@ const Notifications = props => {
 
             {props.pendingFriends && props.pendingFriends.map((receivedRequest, i) => {
                 return <div className="resquest_card" key={i}> 
-                    <img className="friend_image" src={receivedRequest.image} alt="picture" />
+                    <img className="friend_image" src={receivedRequest.image} alt="user_profile_picture" />
                     <div className="request_user_information">
                         <p className="request_user_name">{receivedRequest.first_name} {receivedRequest.last_name}</p>
                         <p className="request_user_location">{receivedRequest.city} {receivedRequest.country}</p>
@@ -44,7 +44,7 @@ const Notifications = props => {
 
             {props.pendingRequests && props.pendingRequests.map((sentRequest, i) => {
                 return <div className="resquest_card" key={i}> 
-                    <img className="friend_image" src={sentRequest.image} alt="picture" />
+                    <img className="friend_image" src={sentRequest.image} alt="user_picture" />
                     <div className="request_user_information">
                         <p className="request_user_name">{sentRequest.first_name} {sentRequest.last_name}</p>
                         <p className="request_user_location">{sentRequest.city} {sentRequest.country}</p> 

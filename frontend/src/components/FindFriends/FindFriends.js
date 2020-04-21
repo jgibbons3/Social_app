@@ -8,19 +8,20 @@ import { followingByUserAction } from "../../store/action/profileAction";
 
 
 const FindFriends = props => {
+    const { dispatch } = props;
 
     useEffect(() => {
-        props.dispatch(allUsersAction())
-        props.dispatch(followingByUserAction())
-    }, []);
+        dispatch(allUsersAction())
+        dispatch(followingByUserAction())
+    }, [dispatch]);
 
     return(
         <div className="user_find_friends">
-            {props.allUsers && props.allUsers.map((user, i) => {
-                if (user.id != props.userProfile.id) {
+            {props.allUsers && props.allUsers.filter(user => 
+                user.id !== props.userProfile.id).map((user, i) => {
                     return <UserCard key={i} user={user}/>
                 }    
-            })}
+            )}
         </div>
     );
 };

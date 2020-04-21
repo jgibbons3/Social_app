@@ -22,9 +22,10 @@ const PostsHome = props => {
         setState({...state, [e.target.name]: e.target.value})
     };
 
+    const { dispatch } = props;
     useEffect(() => {
-        props.dispatch(postAction())
-    }, []);
+        dispatch(postAction())
+    }, [dispatch]);
 
     return(
         <>

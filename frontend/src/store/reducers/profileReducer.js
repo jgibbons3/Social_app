@@ -48,7 +48,7 @@ const profileReducer = function (state = initialState, action) {
             const listIdFollowing = []
 
                 copyList.map(item => {
-                    listIdFollowing.push(item.id)
+                    return listIdFollowing.push(item.id)
                 })
 
             const userFollowing = listIdFollowing.includes(action.payload.id) ?

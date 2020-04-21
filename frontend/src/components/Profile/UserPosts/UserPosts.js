@@ -5,13 +5,14 @@ import { userFriendsAction, userFollowingAction, userPostsAction, userFollowersA
 
 
 const UserPosts = props => {
+    const { dispatch, userProfile } = props;
 
     useEffect(() => {
-        props.dispatch(userPostsAction(props.userProfile))
-        props.dispatch(userFriendsAction(props.userProfile))
-        props.dispatch(userFollowingAction())
-        props.dispatch(userFollowersAction())
-    }, []);
+        dispatch(userPostsAction(userProfile))
+        dispatch(userFriendsAction(userProfile))
+        dispatch(userFollowingAction())
+        dispatch(userFollowersAction())
+    }, [dispatch, userProfile]);
 
     return(
         <div className="display_post_container">

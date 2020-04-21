@@ -5,10 +5,11 @@ import PostCard from "../../PostCard/PostCard";
 
 
 const FriendsPosts = props => {
+    const { dispatch } = props;
 
     useEffect(() => {
-        props.dispatch(postsFriendsAction())
-    }, []);
+        dispatch(postsFriendsAction())
+    }, [dispatch]);
 
     let filteredPost = props.friendsPosts.filter((post) => post.content.indexOf(props.filter) !== -1);
 

@@ -80,7 +80,7 @@ const AllPosts = props => {
                     <ul className="pagination">
                         {pageNumbers && pageNumbers.map(number => (
                             <li key={number} className="page_item">
-                                <a onClick={() => handlePagination(number)} href="#" className="page_link">
+                                <a onClick={() => handlePagination(number)} href="#!" className="page_link">
                                     {currentPage === number ? <div style={{color:"rgb(161, 134, 98)"}}>{number}</div> : 
                                     <div style={{color:"black"}}>{number}</div>}
                                 </a>

@@ -34,16 +34,16 @@ const PostCard = props => {
         setDeletePost(!deletePost)
     };
  
-
+    const { dispatch, post, newComment } = props
     useEffect(() => {
         async function fetchData() {
-            const response = await props.dispatch(postCommentAction(props.post))
+            const response = await dispatch(postCommentAction(post))
             if (response) {
                 setComments(response);
             } 
         };
         fetchData();
-    }, [props.newComment])
+    }, [dispatch, post, newComment])
 
 
     return(   

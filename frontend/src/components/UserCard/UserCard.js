@@ -18,7 +18,7 @@ const UserCard = props => {
     //Like/dislike
     const listFolloingByUser = [];
     props.followingByUser.map(item => {
-        listFolloingByUser.push(item.id)
+        return listFolloingByUser.push(item.id)
     })
 
     const color = listFolloingByUser.includes(props.user.id) ?  'rgb(161, 134, 98)' : 'white'
@@ -27,7 +27,7 @@ const UserCard = props => {
     //Friends / no friends
     const listUserFriends = [];
     props.userFriends.map(item => {
-        listUserFriends.push(item.id)
+        return listUserFriends.push(item.id)
     })
 
     const color_friend = listUserFriends.includes(props.user.id) ? 'rgb(161, 134, 98)' : 'white' 

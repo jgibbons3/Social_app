@@ -4,10 +4,11 @@ import { postsFollowAction } from "../../../store/action/postAction";
 import PostCard from "../../PostCard/PostCard";
 
 const FollowPosts = props => {
+    const { dispatch } = props;
 
     useEffect(() => {
-        props.dispatch(postsFollowAction())
-    }, [props.dispatch]);
+        dispatch(postsFollowAction())
+    }, [dispatch]);
 
     let filteredPost = props.followPosts.filter((post) => post.content.indexOf(props.filter) !== -1);
 

@@ -5,11 +5,11 @@ import PostCard from "../../PostCard/PostCard";
 
 
 const LikedPosts = props => {
-    
+    const { dispatch, userProfile, allPosts } = props;
 
     useEffect(() => {    
-        props.dispatch(postsLikedAction()) 
-    }, [props.userProfile, props.allPosts]);
+        dispatch(postsLikedAction()) 
+    }, [dispatch, userProfile, allPosts]);
 
     let filteredPost = props.likedPosts.filter((post) => post.content.indexOf(props.filter) !== -1);
 

@@ -21,9 +21,9 @@ const userReducer = function (state = initialState, action) {
             
             action.payload.map(friend => {
                 if(friend.requester_user.id !== userId) {
-                    newList.push({ ...friend.requester_user })
+                    return newList.push({ ...friend.requester_user })
                 } else {
-                    newList.push({ ...friend.receiver_user }) 
+                    return newList.push({ ...friend.receiver_user }) 
                 }
             })
 
@@ -39,9 +39,9 @@ const userReducer = function (state = initialState, action) {
             
             action.payload.map(friend => {
                 if(friend.requester_user.id !== user_Id) {
-                    pendingRequester.push({ ...friend.requester_user, "id_request": friend.id })
+                    return pendingRequester.push({ ...friend.requester_user, "id_request": friend.id })
                 } else {
-                    pendingReceiver.push({ ...friend.receiver_user, "id_request": friend.id }) 
+                    return pendingReceiver.push({ ...friend.receiver_user, "id_request": friend.id }) 
                 }
             })
 

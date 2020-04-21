@@ -16,13 +16,7 @@ export const loadState = () => {
     }
   };
 
-const loginState = loadState();
-
-const initialState = {
-    loginReducer: loginState
-};
-
-// 
+loadState();
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 

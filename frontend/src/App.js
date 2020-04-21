@@ -5,13 +5,14 @@ import { profileAction } from "./store/action/profileAction";
 
 
 const App = (props) => {
+  const { dispatch } = props;
 
   useEffect(() => {
     async function userProfile() {
-      await props.dispatch(profileAction())
+      await dispatch(profileAction())
     }
     userProfile()
-  }, [])
+  }, [dispatch])
 
   return (
       <div className='pageDisplay'>
