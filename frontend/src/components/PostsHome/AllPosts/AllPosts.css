@@ -1,0 +1,94 @@
+.writePostCard {
+    display: flex;
+    flex-direction: row;
+    width: 55vw;
+    height: 9vh;
+    margin-left: 3vw;
+    margin-top: 2.5%;
+    background-color: white;
+}
+
+.writePostInput {
+    width: 37vw;
+    height: 3vh;
+    margin-left: 3vw;
+    margin-top: 3vh;
+    border: transparent;
+}
+
+.profile_pic {
+    height: 6vh;
+    object-fit: cover;
+    width: 3.2vw;
+    border-radius: 50%;
+    margin-left: 1vw;
+    margin-top: 1.5vh;
+}
+
+@media screen and (max-width: 1110px) {
+    .profile_pic {
+        width: 4vw;
+      }
+}
+
+@media screen and (max-width: 900px) {
+    .profile_pic {
+        width: 5vw;
+      }
+}
+
+@media screen and (max-width: 700px) {
+    .profile_pic {
+        display: none;
+      }
+}
+
+.newPostForm {
+    display: flex;
+    flex-direction: row;
+    width: 46vw;
+}
+
+.newPostButton {
+    margin-left: 1.5vw;
+    margin-top: 2vh;
+    width: 7vw;
+    height: 4.8vh;
+    font-size: 0.9em;
+    color: white;
+    background-color: rgb(161, 134, 98);
+    border: transparent;
+    border-radius: 25em;
+}
+
+.camera_icon_new_post {
+    margin-top: 2.5vh;
+}
+
+.pagination_container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.display_post_container {
+    margin: 1% auto;
+    width: 100vw;
+    columns: 2;
+    column-gap: 1%;
+}
+ 

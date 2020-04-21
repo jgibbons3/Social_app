@@ -1,0 +1,65 @@
+.notif_container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 0.09em;
+    border-radius: 0.5em;
+    width: auto;
+    height: auto;
+    right: 30vw;
+    position: absolute;
+    z-index: 12;
+    padding: 1%;
+}
+
+.requests_titles {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.resquest_card {
+    display: flex;
+    flex-direction: row;
+}
+
+.friend_image {
+    height: 5vh;
+    object-fit: cover;
+    width: 2.6vw;
+    border-radius: 50%;
+    margin-top: 1.5vh;
+}
+
+.request_user_information {
+    margin-left: 1em;
+}
+
+.request_user_name {
+    margin-top: 0.8em;
+    margin-bottom: 0.1em;
+}
+
+.request_user_location {
+    color: gray;
+    font-size: 0.8em;
+    margin-top: 0;
+}
+
+.request_icon {
+    display: flex;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.accept_icon {
+    background-color: rgb(161, 134, 98);
+    border-radius: 50%;
+    margin: 0.2em;
+}
+
+.cancel_icon {
+    margin-top: 0.3em;
+    margin-left: 0.4em;
+}

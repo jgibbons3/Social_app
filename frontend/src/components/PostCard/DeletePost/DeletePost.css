@@ -1,0 +1,47 @@
+.modal-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-background {
+    position: fixed;
+    background-color: black;
+    opacity: 0.78;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal-content {
+    position: relative;
+    z-index: 10;
+    /* background-color: white; */
+    width: 40vw;
+    height: 30vh;
+    border-radius: 0.2em;
+    background-color: white;
+}
+
+.delete_post_message {
+    display: flex;
+    justify-content: center;
+    margin-top: 6.5vh;
+}
+
+.delete_post_button {
+    margin-left: 6.5vw;
+    margin-top: 2vh;
+    width: 10vw;
+    height: 5vh;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(161, 134, 98);
+    border: transparent;
+    border-radius: 25em;
+}

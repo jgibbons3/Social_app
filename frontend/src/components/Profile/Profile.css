@@ -1,0 +1,47 @@
+.user_profile_and_links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    margin: 3%;
+    padding: 2%;
+    background-color: white;
+}
+
+.user_profile_info {
+    width: 17vw;
+    border-right: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    padding-right: 3%;
+    align-items: center;
+}
+
+.profile_descriptoion_links {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_description {
+    height: 15vh;
+    width: 66vw;
+    border-bottom: 1px solid lightgray;
+    padding: 3%;
+}
+
+.profile_links {
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    margin-right: 5vw;
+    justify-content: center;
+}
+
+.card_profile_pic2 {
+    height: 7.5vh;
+    object-fit: cover;
+    width: 4vw;
+    border-radius: 50%;
+    margin-left: 1vw;
+    margin-top: 1.5vh;
+}

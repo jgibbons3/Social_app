@@ -1,0 +1,46 @@
+.subMenuWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 7vh;
+    border-bottom: 1px solid lightgray;
+}
+
+.subMenuLeft {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5vw;
+}
+
+.seatchIcon {
+    margin-top: 2.5vh;
+    margin-right: 1.5vw;
+}
+
+.searchPostInput {
+    background-color: transparent;
+    border: transparent;
+    width: 30vw;
+    height: 3vh;
+    margin-top: 2vh;
+}
+
+.subMenuRight {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5vw;
+}
+
+.subMenuOptions {
+    padding-left: 5vw;
+    font-size: 1em;
+    color: black;
+}
+
+.user_option_clicked {
+    padding-left: 5vw;
+    font-size: 1em;
+    color: rgb(161, 134, 98);
+}
+

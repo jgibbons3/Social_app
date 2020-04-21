@@ -1,0 +1,47 @@
+.UserCardWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: auto;
+    margin: 3%;
+    background-color: white;
+    padding: 2%;
+    align-items: center;
+}
+
+.user_card_name {
+    display: flex;
+    flex-direction: row;   
+    margin: 0%;
+}
+
+p.user_card_name1{
+    margin: 6%, 1%, 2%, 0%;
+}
+
+p.user_card_name2{
+    margin: 0%;
+    font-size: 0.7em;
+}
+
+.user_card_location {
+    display: flex;
+    flex-direction: row;
+}
+
+.user_card_buttons_options {
+    display: flex;
+    flex-direction: row;
+}
+
+.user_card_buttons {
+    margin-left: 0.7vw;
+    margin-top: 11%;
+    width: 9vw;
+    height: 5vh;
+    font-size: 0.6em;
+    color: black;
+    background-color: white;
+    border: lightgray 2;
+    border-radius: 2em;
+}

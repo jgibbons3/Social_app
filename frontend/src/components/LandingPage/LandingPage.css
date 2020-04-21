@@ -1,0 +1,52 @@
+.LandingPageWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.MenuWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 7vh;
+    background-color: white;
+}
+
+.leftMenu {
+    display: flex;
+    flex-direction: row;
+    color: gray;
+    width: 50vw;
+}
+
+.rightMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: gray;
+    width: 50vw;
+}
+
+.leftMenuOptions {
+    padding-left: 4.5vw;
+    font-size: 0.9em;
+    color: black;
+}
+
+.rightMenuOptions {
+    padding-left: 4.5vw;
+    font-size: 0.9em;
+    color: black;
+}
+
+.user_menu_clicked {
+    color: rgb(161, 134, 98);
+    padding-left: 4.5vw;
+    font-size: 0.9em;
+}
+
+.MainLPWrapper {
+    position: relative;
+}

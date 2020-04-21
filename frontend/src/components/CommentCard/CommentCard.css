@@ -1,0 +1,11 @@
+.comment_input {
+    margin: 2%;
+    width: 33vw;
+    height: auto;
+    padding: 3%;
+}
+
+.comment_submit_button {
+    border: transparent;
+    background-color: transparent;
+}
