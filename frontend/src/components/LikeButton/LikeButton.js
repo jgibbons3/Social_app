@@ -11,7 +11,7 @@ const LikeButton = props => {
         e.preventDefault()
         props.dispatch(likePostAction(props.post.id))
     }
-    const color = props.userProfile.like_post.includes(props.post.id) ?  'rgb(161, 134, 98)' : 'lightgray'
+    const color = props.userProfile && props.userProfile.like_post.includes(props.post.id) ?  'rgb(161, 134, 98)' : 'lightgray'
     
     return(
         <>
