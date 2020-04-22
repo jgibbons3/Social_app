@@ -7,14 +7,15 @@ import { rejectFriendRequestAction, aceptFriendRequestAction } from "../../store
 
 
 const Notifications = props => {
-    const handleAcceptRequest = e => {
+
+    const handleAcceptRequest = (e, receivedRequest) => {
         e.preventDefault()
-        props.dispatch(aceptFriendRequestAction(props.pendingFriends))
+        props.dispatch(aceptFriendRequestAction(receivedRequest))
     }
 
-    const handleRejectRequest = e => {
+    const handleRejectRequest = (e, receivedRequest) => {
         e.preventDefault()
-        props.dispatch(rejectFriendRequestAction(props.pendingFriends))
+        props.dispatch(rejectFriendRequestAction(receivedRequest))
     }    
     
 
@@ -30,10 +31,10 @@ const Notifications = props => {
                         <p className="request_user_location">{receivedRequest.city} {receivedRequest.country}</p>
                     </div>
                     <div className="request_icon">
-                        <div className="accept_icon" onClick={handleAcceptRequest}>
+                        <div className="accept_icon" onClick={(e) => handleAcceptRequest(e, receivedRequest)}>
                             <MdDone size={20} style={{color: 'white', cursor: 'pointer'}}/>
                         </div>
-                        <div className="cancel_icon" onClick={handleRejectRequest}>
+                        <div className="cancel_icon" onClick={(e) => handleRejectRequest(e, receivedRequest)}>
                             <MdCancel size={28} style={{color: 'gray', cursor: 'pointer'}}/>
                         </div>
                     </div>

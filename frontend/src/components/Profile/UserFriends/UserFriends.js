@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import UserCard from "../../UserCard/UserCard";
 
 
 const UserFriends = props => {
 
+    useEffect(() => {
+
+    }, [props.userFriends])
 
     return(
         <div className="user_find_friends">

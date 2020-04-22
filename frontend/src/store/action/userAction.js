@@ -127,7 +127,7 @@ export const pendingFriendRequestAction = (user) => async (dispatch, getState) =
 
 export const rejectFriendRequestAction = (rejectUser) => async (dispatch, getState) => {
     const token = getState().loginReducer.tokens.access;
-    const request_id = rejectUser[0].id_request
+    const request_id = rejectUser.id_request
 
     const myHeaders = new Headers({
         "Content-Type": "application/json",
@@ -151,7 +151,7 @@ export const rejectFriendRequestAction = (rejectUser) => async (dispatch, getSta
 
 export const aceptFriendRequestAction = (acceptUser) => async (dispatch, getState) => {
     const token = getState().loginReducer.tokens.access;
-    const request_id = acceptUser[0].id_request
+    const request_id = acceptUser.id_request
 
     const myHeaders = new Headers({
         "Content-Type": "application/json",
