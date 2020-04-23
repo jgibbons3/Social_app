@@ -21,11 +21,11 @@
 .modal-content {
     position: relative;
     z-index: 10;
-    /* background-color: white; */
     width: 40vw;
     height: 30vh;
     border-radius: 0.2em;
     background-color: white;
+    padding: 3%;
 }
 
 .delete_post_message {
@@ -44,4 +44,27 @@
     background-color: rgb(161, 134, 98);
     border: transparent;
     border-radius: 25em;
+}
+
+@media screen and (max-width: 800px) {
+    .delete_post_button {
+        margin-left: 4.5vw;
+        width: 12vw;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .modal-content {
+        width: 70vw;
+        height: 25vh;
+    }
+    .delete_post_message {
+        font-size: 0.8em;
+        margin-top: 3.5vh;
+    }
+    .delete_post_button {
+        margin-left: 8.5vw;
+        width: 20vw;
+        font-size: 0.7em;
+    }
 }

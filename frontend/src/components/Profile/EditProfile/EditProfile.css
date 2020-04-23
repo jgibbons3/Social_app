@@ -31,7 +31,40 @@
     background-color: transparent;
 }
 
+.update_textarea {
+    border-color: lightgrey;
+    font-size: 0.8em;
+    width: 35vw;
+    height: auto;
+    padding: 0.5%;
+    margin: 3%;
+}
+
 #about_edit.update_data  {
     width: 32vw;
 }
 
+@media screen and (max-width: 500px) {
+    .update_label {
+        font-size: 0.6em;
+        width: 15vw;
+        height: 2vh;
+        margin-top: 6%;
+    }
+    .update_data {
+        font-size: 0.6em;
+        width: 14vw;
+        height: 3vh;
+        padding: 0.5%;
+        margin: 3%;
+    }
+    .update_textarea {
+        font-size: 0.6em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .update_label {
+        font-size: 0.5em;
+    }
+}

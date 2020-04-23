@@ -32,7 +32,7 @@ const EditPost = props => {
                 <div className='modal_edit_content'>
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <input className='update-input' name="content" type='text'
+                            <textarea className='update-input' name="content" type='text'
                             defaultValue={props.post.content} onChange={handleChange}/>
                         </div>
 

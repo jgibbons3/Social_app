@@ -74,6 +74,8 @@ const PostCard = props => {
             </div> 
 
             <div>
+                
+                {/* Display menu */}
                 {displayMenu ? <div className="menu_post_options"> 
                 <div className="icons_menu" style={{cursor: 'pointer'}}  onClick={handleEdit}>
                     <MdEdit size={20} style={{color: 'gray'}}/> <p className="edit_post">Edit</p> 

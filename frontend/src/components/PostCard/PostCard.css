@@ -121,6 +121,11 @@
         height: 4.2vh;
         width: 7.6vw;
     }
+    .menu_post_options {
+        width: 24vw;
+        left: 65vw;
+        font-size: 0.9em;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -133,6 +138,11 @@
         font-size: 0.88em;
     }
     .icons_post_card {
+        font-size: 0.8em;
+    }
+    .menu_post_options {
+        width: 30vw;
+        left: 60vw;
         font-size: 0.8em;
     }
 }

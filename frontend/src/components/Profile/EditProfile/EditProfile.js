@@ -78,7 +78,7 @@ const EditProfile = props => {
                         
                         <div className="input_edit_profile">
                             <label className='update_label'>About</label>
-                            <input className='update_data' id="about_edit" name="about" type='text' onChange={handleChange}
+                            <textarea className='update_textarea' id="about_edit" name="about" type='text' onChange={handleChange}
                             defaultValue={props.userProfile.about}/>
                         </div>
 
