@@ -45,3 +45,22 @@ p.user_card_name2{
     border: lightgray 2;
     border-radius: 2em;
 }
+
+@media screen and (max-width: 875px) {
+    .user_card_buttons {
+        font-size: 0.5em;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .UserCardWrapper {
+        width: 40vw;
+    }
+    .user_card_buttons {
+        width: auto;
+        height: 4vh;
+        font-size: 0.4em;
+        border: lightgray 2;
+        border-radius: 2em;
+    }
+}

@@ -45,9 +45,9 @@ const Profile = props => {
                     <p className="user_card_name2">{props.userProfile.city},</p> &ensp;
                     <p className="user_card_name2">{props.userProfile.country}</p>
                 </div>  
-                <div className="user_card_buttons_options">
-                    <button style={{cursor: "pointer"}} onClick={handleEdit} className="user_card_buttons">EDIT PROFILE</button>
-                    <button style={{cursor: "pointer"}} onClick={handleDelete} className="user_card_buttons">DELETE PROFILE</button>
+                <div className="user_profile_buttons_options">
+                    <button style={{cursor: "pointer"}} onClick={handleEdit} id="user_profile_buttons">EDIT PROFILE</button>
+                    <button style={{cursor: "pointer"}} onClick={handleDelete} id="user_profile_buttons">DELETE PROFILE</button>
                 </div>
             </div>
            

@@ -45,3 +45,48 @@
     margin-left: 1vw;
     margin-top: 1.5vh;
 }
+
+.user_profile_buttons_options {
+    display: flex;
+    flex-direction: row;
+}
+
+#user_profile_buttons {
+    margin-left: 0.7vw;
+    margin-top: 11%;
+    width: 9vw;
+    height: 5vh;
+    font-size: 0.6em;
+    color: black;
+    background-color: white;
+    border: lightgray 2;
+    border-radius: 2em;
+}
+
+@media screen and (max-width: 1060px) {
+   .card_profile_pic2 {
+        width: 5vw;
+   }
+}
+
+@media screen and (max-width: 800px) {
+    .card_profile_pic2 {
+         width: 6vw;
+    }
+ }
+
+ @media screen and (max-width: 700px) {
+    #user_profile_buttons {
+        font-size: 0.5em;
+    }
+ }
+
+ @media screen and (max-width: 600px) {
+    .user_profile_buttons_options {
+        flex-direction: column;
+    }
+    #user_profile_buttons {
+        width: auto;
+        font-size: 0.5em;
+    }
+ }

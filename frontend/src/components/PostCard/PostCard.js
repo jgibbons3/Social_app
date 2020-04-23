@@ -57,7 +57,7 @@ const PostCard = props => {
 
             <div className="user_info_card">
                 <div className="user_info_card_1">
-                    <div>
+                    <div className="user_image_container">
                         <img className="card_profile_pic" src={props.post.owner.image} alt="profile_pic"/>
                     </div>
                     <div className="username_post_card">

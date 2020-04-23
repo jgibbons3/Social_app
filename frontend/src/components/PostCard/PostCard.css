@@ -62,8 +62,6 @@
 }
 
 .menu_post_options {
-    /* display: flex;
-    flex-direction: column; */
     background-size: cover;
     position: absolute;
     width: 10vw;
@@ -103,4 +101,24 @@
 
 .sub_icons_post_card p {
     margin-right: 0.8vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .card_profile_pic {
+        height: 5vh;
+        width: 4.1vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .PostCardWrapper {
+        width: 88vw;
+    }
+    .post_card_image {
+        width: 84vw;
+    }
+    .card_profile_pic {
+        height: 4.2vh;
+        width: 7.6vw;
+    }
 }

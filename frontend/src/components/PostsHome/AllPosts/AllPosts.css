@@ -25,24 +25,6 @@
     margin-top: 1.5vh;
 }
 
-@media screen and (max-width: 1110px) {
-    .profile_pic {
-        width: 4vw;
-      }
-}
-
-@media screen and (max-width: 900px) {
-    .profile_pic {
-        width: 5vw;
-      }
-}
-
-@media screen and (max-width: 700px) {
-    .profile_pic {
-        display: none;
-      }
-}
-
 .newPostForm {
     display: flex;
     flex-direction: row;
@@ -92,3 +74,50 @@ ul.pagination li a {
     column-gap: 1%;
 }
  
+@media screen and (max-width: 1110px) {
+    .profile_pic {
+        width: 4vw;
+      }
+      .writePostCard {
+          width: 60vw;
+      }
+      .newPostButton {
+       width: 11vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .profile_pic {
+        width: 5vw;
+      }
+}
+
+@media screen and (max-width: 550px) {
+    .display_post_container {
+        columns: 1;
+    }
+    .profile_pic {
+        display: none;
+      }
+    .writePostInput {
+        width: 38vw;
+    }
+    .newPostButton {
+        width: 15vw;
+    }
+    .writePostInput {
+        width: 57vw;
+    }
+    .writePostCard {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .newPostButton {
+        font-size: 0.7em;
+    }
+    ::placeholder {
+        font-size: 0.9em;
+    }
+}
