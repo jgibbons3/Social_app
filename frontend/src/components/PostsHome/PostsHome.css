@@ -44,3 +44,16 @@
     color: rgb(161, 134, 98);
 }
 
+@media screen and (max-width: 450px) {
+    .subMenuRight {
+        font-size: 0.9em;
+        margin-right: 2vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .subMenuRight {
+        font-size: 0.7em;
+        margin-right: 1vw;
+    }
+}

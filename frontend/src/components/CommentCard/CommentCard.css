@@ -3,9 +3,18 @@
     width: 33vw;
     height: auto;
     padding: 3%;
+    border: solid;
+    border-color: lightgray;
 }
 
 .comment_submit_button {
     border: transparent;
     background-color: transparent;
+}
+
+@media screen and (max-width: 475px) {
+    .comment_input {
+        width: 63vw;
+        font-size: 0.9em;
+    }
 }

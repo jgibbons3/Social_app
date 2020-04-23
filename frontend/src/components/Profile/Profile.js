@@ -38,12 +38,12 @@ const Profile = props => {
                     <img className="card_profile_pic2" src={`http://localhost:8000${props.userProfile.image}`} alt="profile_pic"/>
                 </div>  
                 <div className="user_card_name">
-                    <p className="user_card_name1">{props.userProfile.first_name}</p> &ensp;
-                    <p className="user_card_name1">{props.userProfile.last_name}</p>
+                    <p className="user_profile_name1">{props.userProfile.first_name}</p> &ensp;
+                    <p className="user_profile_name1">{props.userProfile.last_name}</p>
                 </div>
                 <div className="user_card_location">
-                    <p className="user_card_name2">{props.userProfile.city},</p> &ensp;
-                    <p className="user_card_name2">{props.userProfile.country}</p>
+                    <p className="user_profile_name2">{props.userProfile.city},</p> &ensp;
+                    <p className="user_profile_name2">{props.userProfile.country}</p>
                 </div>  
                 <div className="user_profile_buttons_options">
                     <button style={{cursor: "pointer"}} onClick={handleEdit} id="user_profile_buttons">EDIT PROFILE</button>

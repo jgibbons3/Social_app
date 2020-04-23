@@ -50,3 +50,21 @@
 .MainLPWrapper {
     position: relative;
 }
+
+@media screen and (max-width: 450px) {
+    .leftMenu {
+        font-size: 0.9em;
+    }
+    .rightMenu {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .leftMenu {
+        font-size: 0.7em;
+    }
+    .rightMenu {
+        font-size: 0.7em;
+    }
+}

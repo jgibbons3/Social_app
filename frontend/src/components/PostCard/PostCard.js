@@ -83,7 +83,7 @@ const PostCard = props => {
                 </div>
                 </div> : <> </>}
 
-                <p>{props.post.content} </p>
+                <p className="user_card_content">{props.post.content} </p>
             </div>
 
             <div>

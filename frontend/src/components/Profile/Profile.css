@@ -46,6 +46,15 @@
     margin-top: 1.5vh;
 }
 
+p.user_profile_name1{
+    margin: 6%, 1%, 2%, 0%;
+}
+
+p.user_profile_name2{
+    margin: 0%;
+    font-size: 0.7em;
+}
+
 .user_profile_buttons_options {
     display: flex;
     flex-direction: row;
@@ -79,6 +88,15 @@
     #user_profile_buttons {
         font-size: 0.5em;
     }
+    .card_profile_pic2 {
+        width: 7vw;
+    }
+    .profile_description {
+        font-size: 0.9em;
+    }
+    .profile_links {
+        font-size: 0.9em;
+    }
  }
 
  @media screen and (max-width: 600px) {
@@ -88,5 +106,40 @@
     #user_profile_buttons {
         width: auto;
         font-size: 0.5em;
+    }
+    p.user_profile_name1{
+        font-size: 0.8em;
+    }
+    p.user_profile_name2{
+        font-size: 0.6em;
+        width: auto;
+    }
+    .profile_description {
+        font-size: 0.8em;
+    }
+    .profile_links {
+        font-size: 0.8em;
+    }
+ }
+
+ @media screen and (max-width: 400px) {
+    .card_profile_pic2 {
+        width: 12vw;
+    }
+    #user_profile_buttons {
+        font-size: 0.45em;
+    }
+    p.user_profile_name1{
+        font-size: 0.56em;
+    }
+    p.user_profile_name2{
+        font-size: 0.4em;
+    }
+    .profile_description {
+        font-size: 0.7em;
+    }
+    .profile_links {
+        font-size: 0.7em;
+        margin-right: 1vw;
     }
  }
