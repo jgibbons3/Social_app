@@ -13,7 +13,6 @@ const loadState = () => {
   try {
     const serializedState = localStorage.getItem('access');
     if (serializedState === null) {
-      console.log("no autorizado")
       return undefined;
     }
     return JSON.parse(serializedState);
