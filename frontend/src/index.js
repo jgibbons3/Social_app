@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -14,6 +13,7 @@ const loadState = () => {
   try {
     const serializedState = localStorage.getItem('access');
     if (serializedState === null) {
+      console.log("no autorizado")
       return undefined;
     }
     return JSON.parse(serializedState);
@@ -37,12 +37,10 @@ if (payload) {
 ReactDOM.render(
   <Provider store={ store }>
     <Router>
-      <App>
         <Switch>
             <Route exact path='/login' component={Login}/>
             <Route path='/' component={LandingPage}/>
         </Switch>
-      </App>
     </Router>
   </Provider>,
   document.getElementById('root')

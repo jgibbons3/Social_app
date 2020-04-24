@@ -12,7 +12,8 @@ import PostsHome from "../PostsHome/PostsHome";
 import Profile from "../Profile/Profile";
 import Notifications from "../Notifications/Notifications";
 import { pendingFriendRequestAction } from "../../store/action/userAction";
-
+import { setAuthenticated } from "../../store/action/loginAction";
+import { profileAction } from "../../store/action/profileAction";
 
 const LandingPage = props => {
     const [notif, setNotif] = useState(false)
@@ -26,13 +27,27 @@ const LandingPage = props => {
         setNotif(!notif)
     }
      
+    const handleLogout = e => {
+        props.dispatch(setAuthenticated());
+        localStorage.clear();
+    }
+
     const { dispatch, userProfile } = props;
+    useEffect(() => {
+        async function userProfile() {
+          await dispatch(profileAction())
+        }
+        userProfile()
+    }, [dispatch])
+
+    
     useEffect(() => {
         if(userProfile instanceof Array === false) {
             dispatch(pendingFriendRequestAction(userProfile))
         }
     }, [userProfile, dispatch]);
    
+
 
     return(
         <div className='LandingPageWrapper'>
@@ -65,7 +80,7 @@ const LandingPage = props => {
                         <FiUser/> Profile</p>
                     </Link>
 
-                    <div>
+                    <div onClick={handleLogout}>
                         <Link to="/login" style={{textDecoration: 'none'}}>
                             <p className='rightMenuOptions'> <IoMdLogOut/> Logout</p>
                         </Link>
