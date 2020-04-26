@@ -7,6 +7,7 @@ import store from './store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './components/Login/Login';
 import LandingPage from "./components/LandingPage/LandingPage";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 
 const loadState = () => {
@@ -38,7 +39,7 @@ ReactDOM.render(
     <Router>
         <Switch>
             <Route exact path='/login' component={Login}/>
-            <Route path='/' component={LandingPage}/>
+            <PrivateRoute path='/' component={LandingPage}/>
         </Switch>
     </Router>
   </Provider>,

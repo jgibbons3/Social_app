@@ -55,7 +55,7 @@ const Login = props => {
                         <div>
                             <p>{message}</p>
                         </div>
-                        <div>
+                        <div data-testid="login_button">
                             <button className='buttonLogin' type='submit'>Login</button>
                         </div>
                     </form>
