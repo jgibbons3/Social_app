@@ -4,7 +4,7 @@ import { loginAction } from "../../store/action/loginAction";
 import "./Login.css";
 
 
-const Login = props => {
+export const Login = props => {
     let [state, setState] = useState({
         email: '',
         password: '',
@@ -55,8 +55,8 @@ const Login = props => {
                         <div>
                             <p>{message}</p>
                         </div>
-                        <div data-testid="login_button">
-                            <button className='buttonLogin' type='submit'>Login</button>
+                        <div>
+                            <button id="login_button" className='buttonLogin' type='submit'>Login</button>
                         </div>
                     </form>
                 </div>
