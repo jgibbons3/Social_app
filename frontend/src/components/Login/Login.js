@@ -13,7 +13,6 @@ export const Login = props => {
     let [message, setMessage] = useState(false)
 
     const handleChange = e => {
-        e.preventDefault();
         setState({ ...state, [e.target.name]: e.target.value});
     }
 
@@ -43,14 +42,14 @@ export const Login = props => {
             </div>
             <div className='loginForm'>
                 <div className='loginWrapper'>
-                    <form onSubmit={handleSubmit}>
+                    <form id="submit_login_form" onSubmit={handleSubmit}>
                         <div>
-                            <input className='loginInput' type='text' name='email' value={state.email} placeholder='email' 
-                            onChange={handleChange}></input>
+                            <input id="email_input" className='loginInput' type='email' name='email' value={state.email} 
+                            placeholder='email' onChange={handleChange} required></input>
                         </div>
                         <div>
-                            <input className='loginInput' type='password' name='password' value={state.password} 
-                            placeholder='password' onChange={handleChange}></input>
+                            <input id="password_input" className='loginInput' type='password' name='password' value={state.password} 
+                            placeholder='password' onChange={handleChange} required></input>
                         </div>
                         <div>
                             <p>{message}</p>

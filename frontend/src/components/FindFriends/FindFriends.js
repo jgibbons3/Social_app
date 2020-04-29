@@ -16,7 +16,7 @@ const FindFriends = props => {
     }, [dispatch]);
 
     return(
-        <div className="user_find_friends">
+        <div id="fidn_friends" className="user_find_friends">
             {props.allUsers && props.allUsers.filter(user => 
                 user.id !== props.userProfile.id).map((user, i) => {
                     return <UserCard key={i} user={user}/>
