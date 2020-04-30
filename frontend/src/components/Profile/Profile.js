@@ -10,9 +10,10 @@ import DeleteProfile from "./DeleteProfile/DeleteProfile";
 import EditProfile from "./EditProfile/EditProfile";
 
 
-const Profile = props => {
+export const Profile = props => {
     const [deleteProfile, setDeleteProfile] = useState(false)
     const [editProfile, setEditProfile] = useState(false)
+    const pathName = props.location.pathname;
 
     const handleDelete = e => {
         e.preventDefault()
@@ -24,12 +25,11 @@ const Profile = props => {
         setEditProfile(!editProfile)
     }
 
-    const PathName = props.location.pathname;
-
     return(
-        <>
+        <div>
         <div className="user_profile_and_links">
-            {deleteProfile ? <DeleteProfile deleteProfile={deleteProfile} setDeleteProfile={setDeleteProfile}/> : <></>}
+            {deleteProfile ? <div id="edit_profile_modal"><DeleteProfile deleteProfile={deleteProfile} 
+            setDeleteProfile={setDeleteProfile}/></div> : <></>}
             {editProfile ? <EditProfile editProfile={editProfile} setEditProfile={setEditProfile}/> : <></>}
 
             {/* user card info */}
@@ -46,8 +46,13 @@ const Profile = props => {
                     <p className="user_profile_name2">{props.userProfile.country}</p>
                 </div>  
                 <div className="user_profile_buttons_options">
-                    <button style={{cursor: "pointer"}} onClick={handleEdit} id="user_profile_buttons">EDIT PROFILE</button>
-                    <button style={{cursor: "pointer"}} onClick={handleDelete} id="user_profile_buttons">DELETE PROFILE</button>
+                    
+                    <button style={{cursor: "pointer"}} onClick={handleEdit} 
+                    className="user_profile_buttons">EDIT PROFILE</button>
+
+                    <button id="test_delete_profile" style={{cursor: "pointer"}} onClick={handleDelete} 
+                    className="user_profile_buttons">DELETE PROFILE</button>
+               
                 </div>
             </div>
            
@@ -65,23 +70,23 @@ const Profile = props => {
                 <div className="profile_links">
                  
                     <Link to="/profile/user_posts" style={{textDecoration: 'none'}}>
-                        <p className={PathName.includes('/user_posts') ? 'user_option_clicked' : 'subMenuOptions'}>
+                        <p className={pathName.includes('/user_posts') ? 'user_option_clicked' : 'subMenuOptions'}>
                             {props.userPosts.length} Posts</p>
                         
                     </Link>
 
                     <Link to="/profile/friends" style={{textDecoration: 'none'}}>
-                        <p className={PathName.includes('/friends') ? 'user_option_clicked' : 'subMenuOptions'}>
+                        <p className={pathName.includes('/friends') ? 'user_option_clicked' : 'subMenuOptions'}>
                             {props.userFriends.length} Friends</p>
                     </Link>
 
                     <Link to="/profile/followers" style={{textDecoration: 'none'}}> 
-                        <p className={PathName.includes('/followers') ? 'user_option_clicked' : 'subMenuOptions'}>
+                        <p className={pathName.includes('/followers') ? 'user_option_clicked' : 'subMenuOptions'}>
                             {props.userFollowers.length} Followers</p>
                     </Link>
 
                     <Link to="/profile/following" style={{textDecoration: 'none'}}> 
-                        <p className={PathName.includes('/following') ? 'user_option_clicked' : 'subMenuOptions'}>
+                        <p className={pathName.includes('/following') ? 'user_option_clicked' : 'subMenuOptions'}>
                             {props.userFollowing.length} Following</p>
                     </Link>
 
@@ -96,7 +101,7 @@ const Profile = props => {
             <Route exact path='/profile/following' component={UserFollowing}/>
             <Redirect from="/profile" to="/profile/user_posts"/>
         </div>
-        </>
+        </div>
     );
 };
 

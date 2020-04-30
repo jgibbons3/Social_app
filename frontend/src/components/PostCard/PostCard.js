@@ -67,7 +67,7 @@ const PostCard = props => {
                 </div>
                 <div>
                     {props.post.owner.id === props.userProfile.id ? 
-                    <div className="menu_post_card_icon" onClick={handleMenuPost}>
+                    <div id="menu_post_card" className="menu_post_card_icon" onClick={handleMenuPost}>
                         <AiOutlineMenu size={30} style={{color: 'gray', cursor: 'pointer'}}/>
                     </div> : <> </>}
                 </div>

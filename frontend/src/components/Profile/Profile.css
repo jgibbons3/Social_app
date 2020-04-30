@@ -60,7 +60,7 @@ p.user_profile_name2{
     flex-direction: row;
 }
 
-#user_profile_buttons {
+.user_profile_buttons {
     margin-left: 0.7vw;
     margin-top: 11%;
     width: 9vw;
