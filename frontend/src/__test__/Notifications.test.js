@@ -24,3 +24,4 @@ it("should render a message if item list is empty ", () => {
     
     expect(message.textContent).toEqual('No pending requests')
 })
+
