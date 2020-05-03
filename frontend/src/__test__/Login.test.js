@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { Login } from "../components/Login/Login";
 import ReactTestUtils from "react-dom/test-utils";
 import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk'
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 
@@ -44,9 +43,7 @@ let store;
 let component;
  
 
-store = mockStore({
-    myState: 'sample text',
-});
+store = mockStore({});
 
 store.dispatch = jest.fn();
 

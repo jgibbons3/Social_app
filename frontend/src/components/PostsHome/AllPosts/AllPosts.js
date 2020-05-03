@@ -54,7 +54,7 @@ const AllPosts = props => {
             {/* create new post */}
             <div className='writePostCard'>
                 <div>
-                    <img className="profile_pic" src={`http://localhost:8000${props.userProfile.image}`} alt="profile_pic"/>
+                    <img className="profile_pic" src={props.userProfile && `http://localhost:8000${props.userProfile.image}`} alt="profile_pic"/>
                 </div>
                 <form className='newPostForm' onSubmit={handleSubmit}>
                     <div>

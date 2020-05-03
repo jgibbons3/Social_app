@@ -7,12 +7,12 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk'
 
-    
+ 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares);
 
 
-it("display notif when click on icon", () => {
+it('notification icon display modal window', () => {
     const div = document.createElement("div");
 
     const store = mockStore({
@@ -22,25 +22,25 @@ it("display notif when click on icon", () => {
     });
 
 
-    // ReactDOM.render(
-    //     <MemoryRouter>
-    //         <Provider store={store}>
-    //             <LandingPage authenticated={true} location={({pathname: ''})} userProfile={({})} 
-    //                 userPosts={[]} userFriends={[]} userFollowers={[]} userFollowing={[]}
-    //                 dispatch={() => {}}  />
-    //         </Provider>
-    //     </MemoryRouter>
-    // ,div)
-
-    //     console.log("hola", div)
+    ReactDOM.render(
+        <MemoryRouter>
+            <Provider store={store}>
+                <LandingPage authenticated={true} location={({pathname: ''})} userProfile={({})} 
+                    userPosts={[]} userFriends={[]} userFollowers={[]} userFollowing={[]}
+                    dispatch={() => {}}  />
+            </Provider>
+        </MemoryRouter>
+    ,div)
     
-// it(, () => {
-//     const div = document.createElement("div");
-//     ReactDOM.render(<LandingPage />, div)
+    // get button that will render the modal window
+    const notifaction_icon = div.querySelector('#notification_wrapper')
+    
+    // // simulate the click function that will display the modal window
+    ReactTestUtils.Simulate.click(notifaction_icon)
 
-//     // const notificationIcon = div.querySelector('#notification_wrapper')
-//     // console.log("notif", notificationIcon)
-//     // expect(message.textContent).toEqual('No pending requests')
-// })
-});
+    // // get modal window by its id, which is only visitble after click function
+    const modal_notification = div.querySelector('#notif_modal')
+    // // expect the modal to be true by its id tag
+    expect(modal_notification.id).toBe("notif_modal")
+  });
 

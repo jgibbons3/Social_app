@@ -23,7 +23,7 @@ export const Notifications = props => {
         <div className="notif_container">
             <p className="requests_titles">Received requests</p>
 
-            {props.pendingFriends.length === 0 ? <p id="friend_pending_request" className="friend_pending_request">
+            {props.pendingFriends && props.pendingFriends.length === 0 ? <p id="friend_pending_request" className="friend_pending_request">
                 No pending requests</p> : <></>}
 
             {props.pendingFriends && props.pendingFriends.map((receivedRequest, i) => {
@@ -45,6 +45,9 @@ export const Notifications = props => {
             })}
 
             <p className="requests_titles">Sent requests</p>
+
+            {!props.pendingRequests ? <p id="sent_pending_request" className="friend_pending_request">
+                No pending requests</p> : <></>}
 
             {props.pendingRequests && props.pendingRequests.map((sentRequest, i) => {
                 return <div className="resquest_card" key={i}> 

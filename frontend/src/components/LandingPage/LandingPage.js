@@ -90,7 +90,7 @@ export const LandingPage = props => {
 
             {/* <Body componenets/> */}
             <div className='MainLPWrapper'>
-                {notif ?  <Notifications/> : <></> }
+                {notif ?  <div id="notif_modal"><Notifications/></div> : <></> }
 
                 <Route path='/findfriends' component={FindFriends}/>
                 <Route path='/posts' component={PostsHome}/>
