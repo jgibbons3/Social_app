@@ -11,7 +11,7 @@ const PrivateRoute = ({ authenticated, component: Component, ...rest }) => (
     )} />
   )
 
-
+  
   const mapStatetoProps = state => {
     return{
         authenticated: state.loginReducer.authenticated,

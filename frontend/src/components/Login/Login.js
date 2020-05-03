@@ -42,7 +42,7 @@ export const Login = props => {
             </div>
             <div className='loginForm'>
                 <div className='loginWrapper'>
-                    <form id="  " onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <input id="email_input" className='loginInput' type='email' name='email' value={state.email} 
                             placeholder='email' onChange={handleChange} required></input>

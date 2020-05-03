@@ -15,9 +15,9 @@ import { pendingFriendRequestAction } from "../../store/action/userAction";
 import { setAuthenticated } from "../../store/action/loginAction";
 import { profileAction } from "../../store/action/profileAction";
 
-const LandingPage = props => {
+export const LandingPage = props => {
     const [notif, setNotif] = useState(false)
-    const counter = props.pendingRequests.length + props.pendingFriends.length
+    const counter = props.pendingRequests && props.pendingRequests.length + props.pendingFriends.length
     const PathName = props.location.pathname;
 
     const color_notifi = counter >= 1 ? 'rgb(161, 134, 98)' : "black";
@@ -70,7 +70,7 @@ const LandingPage = props => {
 
                 <div className='rightMenu'>
 
-                    <div onClick={handleNotifications} style={{cursor: 'pointer'}} >
+                    <div id="notification_wrapper" onClick={handleNotifications} style={{cursor: 'pointer'}} >
                         <p style={{color: color_notifi}} className='rightMenuOptions'> <IoIosNotificationsOutline size={20}/> 
                         {counter}</p>
                     </div>

@@ -25,7 +25,7 @@ const AllPosts = props => {
     }, [props.allPosts])
    
     // Search a post
-    let filteredPost = props.allPosts.filter((post) => post.content.indexOf(props.filter) !== -1);
+    let filteredPost = props.allPosts && props.allPosts.filter((post) => post.content.indexOf(props.filter) !== -1);
 
 
     // Pagination
@@ -35,11 +35,11 @@ const AllPosts = props => {
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = filteredPost.slice(indexOfFirstPost, indexOfLastPost);
+    const currentPosts = filteredPost && filteredPost.slice(indexOfFirstPost, indexOfLastPost);
 
     // Pagination
     const pageNumbers = []
-    for (let i = 1; i <= Math.ceil(props.allPosts.length / postsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(props.allPosts && props.allPosts.length / postsPerPage); i++) {
         pageNumbers.push(i);
     }
 
