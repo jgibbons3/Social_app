@@ -14,7 +14,8 @@ const FollowPosts = props => {
 
     return(
         <div className="display_post_container">
-            {filteredPost && filteredPost.map((post, i) => {
+            {filteredPost && filteredPost.length === 0 ? <p className="empty_liked_posts_mesage">Follow a user to see her/his posts</p> : 
+            filteredPost && filteredPost.map((post, i) => {
                 return <PostCard key={i} post={post}/>
             })}
         </div>

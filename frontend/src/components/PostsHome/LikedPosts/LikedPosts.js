@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { postsLikedAction } from "../../../store/action/postAction";
 import PostCard from "../../PostCard/PostCard";
+import "./LikedPosts.css"
 
 
 const LikedPosts = props => {
@@ -15,7 +16,8 @@ const LikedPosts = props => {
 
     return(
         <div className="display_post_container">
-            {filteredPost && filteredPost.map((post, i) => {
+            {filteredPost && filteredPost.length === 0 ? <p className="empty_liked_posts_mesage">Like a post to display it here</p>  : 
+            filteredPost && filteredPost.map((post, i) => {
                 return <PostCard key={i} post={post}/>
             })}
         </div>

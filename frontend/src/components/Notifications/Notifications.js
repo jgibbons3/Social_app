@@ -23,10 +23,9 @@ export const Notifications = props => {
         <div className="notif_container">
             <p className="requests_titles">Received requests</p>
 
-            {props.pendingFriends && props.pendingFriends.length === 0 ? <p id="friend_pending_request" className="friend_pending_request">
-                No pending requests</p> : <></>}
-
-            {props.pendingFriends && props.pendingFriends.map((receivedRequest, i) => {
+            {props.pendingFriends && props.pendingFriends.length === 0 ? <p id="friend_pending_request" 
+            className="friend_pending_request">No pending requests</p> : 
+            props.pendingFriends && props.pendingFriends.map((receivedRequest, i) => {
                 return <div id="pendingFriends_request" className="resquest_card" key={i}> 
                     <img className="friend_image" src={receivedRequest.image} alt="user_profile_picture" />
                     <div className="request_user_information">
@@ -46,10 +45,9 @@ export const Notifications = props => {
 
             <p className="requests_titles">Sent requests</p>
 
-            {!props.pendingRequests ? <p id="sent_pending_request" className="friend_pending_request">
-                No pending requests</p> : <></>}
-
-            {props.pendingRequests && props.pendingRequests.map((sentRequest, i) => {
+            {props.pendingRequests && props.pendingRequests.length === 0 ? <p id="sent_pending_request" 
+            className="friend_pending_request">No pending requests</p> : 
+            props.pendingRequests && props.pendingRequests.map((sentRequest, i) => {
                 return <div className="resquest_card" key={i}> 
                     <img className="friend_image" src={sentRequest.image} alt="user_picture" />
                     <div className="request_user_information">

@@ -108,7 +108,7 @@ export const addFriendAction = (user) => async (dispatch, getState) => {
     };
 
     const response = await fetch(`http://localhost:8000/api/social/friends/request/${user.id}/`, config);
-        await response.json();
+        await response.json(); 
 };
 
 

@@ -43,7 +43,7 @@ const PostCard = props => {
             } 
         };
         fetchData();
-    }, [dispatch, post, newComment])
+    }, [dispatch, post, newComment, ])
 
 
     return(   
