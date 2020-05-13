@@ -69,10 +69,10 @@
     color: grey;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .friend_image {
-        height: 4vh;
-        width: 5vw;
+        height: 4.7vh;
+        width: 4.5vw;
         margin-top: 0.2vh;
     }
 }
