@@ -18,7 +18,6 @@ export const newCommentAction = (comment, postId) => async (dispatch, getState) 
 
     const response = await fetch(`http://localhost:8000/api/social/comments/create/${postId}/`, config);
     const data = await response.json();
-    console.log("nuevo comment data", data)
     const action = {
         type: "CREATE_COMMENT",
         payload: data
